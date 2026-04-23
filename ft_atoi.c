@@ -6,9 +6,11 @@
 /*   By: jperez-u <jperez-u@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 21:02:38 by jperez-u          #+#    #+#             */
-/*   Updated: 2026/04/22 21:07:42 by jperez-u         ###   ########.fr       */
+/*   Updated: 2026/04/23 20:26:06 by jperez-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_atoi(const char *str)
 {

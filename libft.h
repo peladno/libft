@@ -6,12 +6,11 @@
 /*   By: jperez-u <jperez-u@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 21:19:02 by jperez-u          #+#    #+#             */
-/*   Updated: 2026/04/22 21:27:57 by jperez-u         ###   ########.fr       */
+/*   Updated: 2026/04/23 22:54:13 by jperez-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBF_H
-
+#ifndef LIBFT_H
 # define LIBFT_H
 
 // libraries
@@ -22,5 +21,13 @@
 // Declare functions
 int		ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t n);
+int		ft_isalpha(int arg);
+int		ft_isalnum(int arg);
+int		ft_isascii(int arg);
+int		ft_isdigit(int arg);
+int		ft_isprint(int arg);
+void	*ft_memchr(const void *s, int c, size_t n);
+int		ft_memcmp(const void *s1, const void *s2, size_t n);
+void	*memcpy(void *restrict dst, const void *restrict src, size_t n);
 
 #endif
