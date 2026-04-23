@@ -6,12 +6,12 @@
 /*   By: jperez-u <jperez-u@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/23 22:15:57 by jperez-u          #+#    #+#             */
-/*   Updated: 2026/04/23 22:51:52 by jperez-u         ###   ########.fr       */
+/*   Updated: 2026/04/23 23:11:51 by jperez-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// void ft_lstadd_front(t_list **lst, t_list *new);
 // TODO modify for the homework
+// void ft_lstadd_front(t_list **lst, t_list *new);
 #include "libft.h"
 
 typedef struct s_node
@@ -73,6 +73,8 @@ int	main(void)
 	t_node *head = insert_front(NULL, 20);
 	t_node *head = insert_front(NULL, 10);
 	t_node *head = insert_front(NULL, 5);
+
+	// t_node *head = NULL;
 
 	// insert_front(&head, 20);
 	// insert_front(&head, 10);
