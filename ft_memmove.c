@@ -6,13 +6,13 @@
 /*   By: jperez-u <jperez-u@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/24 14:13:00 by jperez-u          #+#    #+#             */
-/*   Updated: 2026/04/24 22:50:57 by jperez-u         ###   ########.fr       */
+/*   Updated: 2026/04/25 00:02:43 by jperez-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, void *src, size_t len)
+void	*ft_memmove(void *dest, const void *src, size_t len)
 {
 	unsigned char	*d;
 	unsigned char	*s;

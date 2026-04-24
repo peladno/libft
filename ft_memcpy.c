@@ -6,13 +6,13 @@
 /*   By: jperez-u <jperez-u@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/23 21:47:12 by jperez-u          #+#    #+#             */
-/*   Updated: 2026/04/24 14:16:58 by jperez-u         ###   ########.fr       */
+/*   Updated: 2026/04/25 00:03:46 by jperez-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, void *src, size_t len)
+void	*ft_memcpy(const void *dest, const void *src, size_t len)
 {
 	size_t			i;
 	unsigned char	*d;
