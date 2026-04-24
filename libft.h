@@ -6,7 +6,7 @@
 /*   By: jperez-u <jperez-u@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 21:19:02 by jperez-u          #+#    #+#             */
-/*   Updated: 2026/04/23 22:54:13 by jperez-u         ###   ########.fr       */
+/*   Updated: 2026/04/24 14:07:28 by jperez-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,6 @@ int		ft_isdigit(int arg);
 int		ft_isprint(int arg);
 void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
-void	*memcpy(void *restrict dst, const void *restrict src, size_t n);
+void	*ft_memcpy(void *dest, const void *src, size_t len);
 
 #endif
