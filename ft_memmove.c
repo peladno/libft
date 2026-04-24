@@ -6,7 +6,7 @@
 /*   By: jperez-u <jperez-u@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/24 14:13:00 by jperez-u          #+#    #+#             */
-/*   Updated: 2026/04/24 14:16:04 by jperez-u         ###   ########.fr       */
+/*   Updated: 2026/04/24 22:50:57 by jperez-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,4 +14,28 @@
 
 void	*ft_memmove(void *dest, void *src, size_t len)
 {
+	unsigned char	*d;
+	unsigned char	*s;
+
+	s = src;
+	d = dest;
+	if (!dest && !src)
+		return (dest);
+	if (d < s)
+		while (len--)
+			*d++ = *s++;
+	else
+		while (len--)
+			d[len] = s[len];
+	return (dest);
 }
+
+// int	main(void)
+// {
+// 	char	str2[10] = "abcdef";
+
+// 	printf("Antes:  %s\n", str2);
+// 	ft_memmove(str2 + 3, str2, 4);
+// 	printf("Después memmove: %s\n", str2);
+// 	return (0);
+// }
