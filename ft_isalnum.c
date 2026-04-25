@@ -6,7 +6,7 @@
 /*   By: jperez-u <jperez-u@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/23 20:19:33 by jperez-u          #+#    #+#             */
-/*   Updated: 2026/04/23 20:35:19 by jperez-u         ###   ########.fr       */
+/*   Updated: 2026/04/25 15:22:25 by jperez-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,10 @@
 
 int	ft_isalnum(int arg)
 {
-	if ((arg >= '0' && arg <= '9') || (arg >= 'A' && arg >= 'Z') || (arg >= 'a'
+	if ((arg >= '0' && arg <= '9') || (arg >= 'A' && arg <= 'Z') || (arg >= 'a'
 			&& arg <= 'z'))
 	{
 		return (1);
 	}
-
 	return (0);
 }
