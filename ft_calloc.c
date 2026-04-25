@@ -6,10 +6,13 @@
 /*   By: jperez-u <jperez-u@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/23 20:26:14 by jperez-u          #+#    #+#             */
-/*   Updated: 2026/04/24 22:52:15 by jperez-u         ###   ########.fr       */
+/*   Updated: 2026/04/25 18:35:56 by jperez-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+// TODO
 #include "libft.h"
 
-// TODO
+void	*ft_calloc(size_t count, size_t size)
+{
+}
