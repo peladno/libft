@@ -6,7 +6,7 @@
 /*   By: jperez-u <jperez-u@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 21:19:02 by jperez-u          #+#    #+#             */
-/*   Updated: 2026/04/25 15:20:56 by jperez-u         ###   ########.fr       */
+/*   Updated: 2026/04/25 15:44:36 by jperez-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,9 @@ void	*ft_memcpy(void *dest, const void *src, size_t len);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strdup(const char *s1);
 size_t	ft_strlen(const char *s);
+size_t	ft_strlcpy(char *restrict dst, const char *restrict src,
+			size_t dstsize);
+size_t	ft_strlcat(char *restrict dst, const char *restrict src,
+			size_t dstsize);
 
 #endif
