@@ -6,7 +6,7 @@
 /*   By: jperez-u <jperez-u@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 21:10:14 by jperez-u          #+#    #+#             */
-/*   Updated: 2026/04/22 21:42:42 by jperez-u         ###   ########.fr       */
+/*   Updated: 2026/04/25 18:20:04 by jperez-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,5 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	char	*temp_ptr;
-
-	temp_ptr = (char *)s;
-	while (n > 0)
-	{
-		*temp_ptr = 0;
-		temp_ptr++;
-		n--;
-	}
+	ft_memset(s, 0, n);
 }

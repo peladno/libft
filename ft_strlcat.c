@@ -6,18 +6,18 @@
 /*   By: jperez-u <jperez-u@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/25 15:31:14 by javierperez       #+#    #+#             */
-/*   Updated: 2026/04/25 15:55:12 by jperez-u         ###   ########.fr       */
+/*   Updated: 2026/04/25 17:58:01 by jperez-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libc.h>
 
-size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t dstsize)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	unsigned int	len_dest;
-	unsigned int	len_src;
-	unsigned int	total_len;
-	unsigned int	i;
+	size_t	len_dest;
+	size_t	len_src;
+	size_t	total_len;
+	size_t	i;
 
 	len_dest = 0;
 	len_src = 0;
