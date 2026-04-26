@@ -1,28 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jperez-u <jperez-u@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/23 20:26:14 by jperez-u          #+#    #+#             */
-/*   Updated: 2026/04/26 11:50:32 by jperez-u         ###   ########.fr       */
+/*   Created: 2026/04/26 11:51:20 by jperez-u          #+#    #+#             */
+/*   Updated: 2026/04/26 12:31:03 by jperez-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	void	*arr;
+	size_t	s_len;
+	size_t	real_len;
+	char	*sub;
 
-	if (size != 0 && count > SIZE_MAX / size)
+	if (!s)
 		return (NULL);
-	arr = malloc(count * size);
-	if (!arr)
+	s_len = ft_strlen(s);
+	if (start >= s_len)
 	{
-		return (NULL);
+		sub = malloc(1);
+		if (!sub)
+			return (NULL);
+		sub[0] = '\0';
+		return (sub);
 	}
-	ft_bzero(arr, (count * size));
-	return (arr);
+	if (len > s_len - start)
+		real_len = s_len - start;
+	else
+		real_len = len;
+	sub = malloc(real_len + 1);
+	if (!sub)
+		return (NULL);
+	ft_strlcpy(sub, &s[start], real_len + 1);
+	return (sub);
 }
