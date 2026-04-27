@@ -29,7 +29,7 @@ SRCS = \
 	ft_strdup.c \
 	ft_substr.c \
 	ft_strjoin.c \
-# 	ft_strtrim \
+	ft_strtrim.c \
 # 	ft_split \
 # 	ft_itoa \
 # 	ft_strmapi \
@@ -39,10 +39,7 @@ SRCS = \
 # 	ft_putendl_fd \
 # 	ft_putnbr_fd \
 
-
 OBJS = $(SRCS:.c=.o)
-
-RM = rm -f
 
 # ---------------------------------------------------------------------------- #
 

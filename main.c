@@ -6,7 +6,7 @@
 /*   By: jperez-u <jperez-u@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/26 13:54:32 by jperez-u          #+#    #+#             */
-/*   Updated: 2026/04/26 14:26:57 by jperez-u         ###   ########.fr       */
+/*   Updated: 2026/04/27 22:46:16 by jperez-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ int	main(void)
 	char *join;
 	int *arr;
 	char *res;
+	char *strim;
 
 	printf("\n=== CHAR FUNCTIONS ===\n");
 
@@ -117,6 +118,10 @@ int	main(void)
 	arr = ft_calloc(5, sizeof(int));
 	print_result("calloc", arr && arr[0] == 0 && arr[4] == 0);
 	free(arr);
+
+	strim = ft_strtrim("xxholaxx", "x");
+	print_result("strtrim 2", strim && strcmp(strim, "hola") == 0);
+	free(strim);
 
 	return (0);
 }
