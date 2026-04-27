@@ -6,7 +6,7 @@
 /*   By: jperez-u <jperez-u@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/25 15:13:37 by jperez-u          #+#    #+#             */
-/*   Updated: 2026/04/25 15:20:10 by jperez-u         ###   ########.fr       */
+/*   Updated: 2026/04/27 19:57:10 by jperez-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ size_t	ft_strlen(const char *s)
 	size_t	len;
 
 	len = 0;
+	if (!s)
+		return (0);
 	while (s[len])
-	{
 		len++;
-	}
 	return (len);
 }
