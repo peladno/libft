@@ -6,7 +6,7 @@
 /*   By: jperez-u <jperez-u@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/26 13:54:32 by jperez-u          #+#    #+#             */
-/*   Updated: 2026/04/27 22:46:16 by jperez-u         ###   ########.fr       */
+/*   Updated: 2026/04/28 20:15:36 by jperez-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,7 +120,7 @@ int	main(void)
 	free(arr);
 
 	strim = ft_strtrim("xxholaxx", "x");
-	print_result("strtrim 2", strim && strcmp(strim, "hola") == 0);
+	print_result("strtrim", strim && strcmp(strim, "hola") == 0);
 	free(strim);
 
 	return (0);
