@@ -6,7 +6,7 @@
 /*   By: jperez-u <jperez-u@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/26 13:54:32 by jperez-u          #+#    #+#             */
-/*   Updated: 2026/04/28 20:15:36 by jperez-u         ###   ########.fr       */
+/*   Updated: 2026/04/28 22:11:58 by jperez-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,35 @@ static void	print_result(char *name, int ok)
 	printf("%-15s: %s\n", name, ok ? "OK" : "FAIL");
 }
 
+static void	free_split(char **arr)
+{
+	int	i;
+
+	i = 0;
+	if (!arr)
+		return ;
+	while (arr[i])
+		free(arr[i++]);
+	free(arr);
+}
+
+static void	print_split(char **arr)
+{
+	int	i;
+
+	i = 0;
+	if (!arr)
+	{
+		printf("NULL\n");
+		return ;
+	}
+	while (arr[i])
+	{
+		printf("[%d]: '%s'\n", i, arr[i]);
+		i++;
+	}
+	printf("END\n");
+}
 int	main(void)
 {
 	char buf1[50];
@@ -122,6 +151,48 @@ int	main(void)
 	strim = ft_strtrim("xxholaxx", "x");
 	print_result("strtrim", strim && strcmp(strim, "hola") == 0);
 	free(strim);
+
+	printf("\n=== SPLIT TESTS ===\n");
+
+	// 🔹 Test 1: básico
+	res = ft_split("hola mundo test", ' ');
+	print_split(res);
+	free_split(res);
+
+	// 🔹 Test 2: múltiples delimitadores seguidos
+	res = ft_split("hola   mundo", ' ');
+	print_split(res);
+	free_split(res);
+
+	// 🔹 Test 3: delimitador al inicio
+	res = ft_split("   hola mundo", ' ');
+	print_split(res);
+	free_split(res);
+
+	// 🔹 Test 4: delimitador al final
+	res = ft_split("hola mundo   ", ' ');
+	print_split(res);
+	free_split(res);
+
+	// 🔹 Test 5: solo delimitadores
+	res = ft_split("     ", ' ');
+	print_split(res);
+	free_split(res);
+
+	// 🔹 Test 6: sin delimitadores
+	res = ft_split("holamundo", ' ');
+	print_split(res);
+	free_split(res);
+
+	// 🔹 Test 7: string vacío
+	res = ft_split("", ' ');
+	print_split(res);
+	free_split(res);
+
+	// 🔹 Test 8: otro delimitador
+	res = ft_split("a,b,c,d", ',');
+	print_split(res);
+	free_split(res);
 
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: jperez-u <jperez-u@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/26 10:55:47 by jperez-u          #+#    #+#             */
-/*   Updated: 2026/04/26 11:31:46 by jperez-u         ###   ########.fr       */
+/*   Updated: 2026/04/28 22:33:43 by jperez-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,17 +34,3 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	}
 	return (NULL);
 }
-// #include <stdio.h>
-
-// int	main(void)
-// {
-// 	const char *haystack = "Hello, elworld!";
-// 	const char *needle = "elworld";
-
-// 	// Scenario 1: Search within first 13 characters (Success)
-// 	char *ptr1 = ft_strnstr(haystack, needle, 15);
-// 	if (ptr1)
-// 		printf("Found: %s\n", ptr1); // Output: Found: world!
-
-// 	return (0);
-// }
