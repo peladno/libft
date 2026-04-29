@@ -6,13 +6,14 @@
 /*   By: jperez-u <jperez-u@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/26 13:54:32 by jperez-u          #+#    #+#             */
-/*   Updated: 2026/04/29 11:10:30 by jperez-u         ###   ########.fr       */
+/*   Updated: 2026/04/29 12:37:42 by jperez-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <bsd/string.h>
 #include <ctype.h>
+#include <fcntl.h>
 #include <string.h>
 
 // make && cc main.c -lbsd libft.a -I. -o test && ./test
@@ -75,6 +76,13 @@ static char	alternate_case(unsigned int i, char c)
 	if (i % 2 == 0 && c >= 'a' && c <= 'z')
 		return (c - 32);
 	return (c);
+}
+
+static void	to_upper_iter(unsigned int i, char *c)
+{
+	(void)i;
+	if (*c >= 'a' && *c <= 'z')
+		*c -= 32;
 }
 
 int	main(void)
@@ -201,11 +209,66 @@ int	main(void)
 	print_result("split 4", compare_split(split_res, exp4));
 	free_split(split_res);
 
-	printf("\n=== STRMAPI TESTS ===\n");
+	printf("\n=== STR TESTS ===\n");
 
 	mapi_res = ft_strmapi("abcdef", alternate_case);
 	print_result("strmapi 4", mapi_res && strcmp(mapi_res, "AbCdEf") == 0);
 	free(mapi_res);
+
+	char str_iter[] = "hello";
+
+	ft_striteri(str_iter, to_upper_iter);
+	print_result("striteri", strcmp(str_iter, "HELLO") == 0);
+
+	printf("\n=== FD FUNCTIONS ===\n");
+
+	int fd;
+	char buffer[100];
+	int bytes;
+
+	fd = open("test.txt", O_WRONLY | O_CREAT | O_TRUNC, 0644);
+	ft_putchar_fd('A', fd);
+	close(fd);
+
+	fd = open("test.txt", O_RDONLY);
+	bytes = read(fd, buffer, 1);
+	buffer[bytes] = '\0';
+	close(fd);
+
+	print_result("putchar_fd", bytes == 1 && buffer[0] == 'A');
+
+	fd = open("test.txt", O_WRONLY | O_CREAT | O_TRUNC, 0644);
+	ft_putstr_fd("hello", fd);
+	close(fd);
+
+	fd = open("test.txt", O_RDONLY);
+	bytes = read(fd, buffer, 5);
+	buffer[bytes] = '\0';
+	close(fd);
+
+	print_result("putstr_fd", strcmp(buffer, "hello") == 0);
+
+	fd = open("test.txt", O_WRONLY | O_CREAT | O_TRUNC, 0644);
+	ft_putendl_fd("hello", fd);
+	close(fd);
+
+	fd = open("test.txt", O_RDONLY);
+	bytes = read(fd, buffer, 6);
+	buffer[bytes] = '\0';
+	close(fd);
+
+	print_result("putendl_fd", strcmp(buffer, "hello\n") == 0);
+
+	fd = open("test.txt", O_WRONLY | O_CREAT | O_TRUNC, 0644);
+	ft_putnbr_fd(-42, fd);
+	close(fd);
+
+	fd = open("test.txt", O_RDONLY);
+	bytes = read(fd, buffer, 4);
+	buffer[bytes] = '\0';
+	close(fd);
+
+	print_result("putnbr_fd", strcmp(buffer, "-42") == 0);
 
 	return (0);
 }
