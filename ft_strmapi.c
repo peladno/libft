@@ -6,7 +6,7 @@
 /*   By: jperez-u <jperez-u@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/29 10:12:11 by jperez-u          #+#    #+#             */
-/*   Updated: 2026/04/29 11:30:22 by jperez-u         ###   ########.fr       */
+/*   Updated: 2026/04/29 16:30:24 by jperez-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	size_t		len;
-	char		*new;
-	unsigned	i;
+	size_t			len;
+	char			*new;
+	unsigned int	i;
 
 	len = 0;
 	if (!s)

@@ -6,11 +6,11 @@
 /*   By: jperez-u <jperez-u@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/29 15:53:41 by jperez-u          #+#    #+#             */
-/*   Updated: 2026/04/29 15:57:20 by jperez-u         ###   ########.fr       */
+/*   Updated: 2026/04/29 16:28:00 by jperez-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h";
+#include "libft.h"
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
