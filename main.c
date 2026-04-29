@@ -6,7 +6,7 @@
 /*   By: jperez-u <jperez-u@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/26 13:54:32 by jperez-u          #+#    #+#             */
-/*   Updated: 2026/04/28 22:11:58 by jperez-u         ###   ########.fr       */
+/*   Updated: 2026/04/29 11:10:30 by jperez-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,31 @@ static void	print_split(char **arr)
 	}
 	printf("END\n");
 }
+static int	compare_split(char **res, char **expected)
+{
+	int	i;
+
+	i = 0;
+	if (!res || !expected)
+		return (0);
+	while (res[i] && expected[i])
+	{
+		if (strcmp(res[i], expected[i]) != 0)
+			return (0);
+		i++;
+	}
+	if (res[i] != NULL || expected[i] != NULL)
+		return (0);
+	return (1);
+}
+
+static char	alternate_case(unsigned int i, char c)
+{
+	if (i % 2 == 0 && c >= 'a' && c <= 'z')
+		return (c - 32);
+	return (c);
+}
+
 int	main(void)
 {
 	char buf1[50];
@@ -63,6 +88,8 @@ int	main(void)
 	int *arr;
 	char *res;
 	char *strim;
+	char **split_res;
+	char *mapi_res;
 
 	printf("\n=== CHAR FUNCTIONS ===\n");
 
@@ -154,45 +181,31 @@ int	main(void)
 
 	printf("\n=== SPLIT TESTS ===\n");
 
-	// 🔹 Test 1: básico
-	res = ft_split("hola mundo test", ' ');
-	print_split(res);
-	free_split(res);
+	char *exp1[] = {"libft", "piscine", "core", NULL};
+	split_res = ft_split("libft piscine core", ' ');
+	print_result("split 1", compare_split(split_res, exp1));
+	free_split(split_res);
 
-	// 🔹 Test 2: múltiples delimitadores seguidos
-	res = ft_split("hola   mundo", ' ');
-	print_split(res);
-	free_split(res);
+	char *exp2[] = {"push_swap", "libft", "get_next_line", NULL};
+	split_res = ft_split("push_swap---libft---get_next_line", '-');
+	print_result("split 2", compare_split(split_res, exp2));
+	free_split(split_res);
 
-	// 🔹 Test 3: delimitador al inicio
-	res = ft_split("   hola mundo", ' ');
-	print_split(res);
-	free_split(res);
+	char *exp3[] = {"born2beroot", "minishell", "philosophers", NULL};
+	split_res = ft_split("...born2beroot.minishell.philosophers...", '.');
+	print_result("split 3", compare_split(split_res, exp3));
+	free_split(split_res);
 
-	// 🔹 Test 4: delimitador al final
-	res = ft_split("hola mundo   ", ' ');
-	print_split(res);
-	free_split(res);
+	char *exp4[] = {NULL};
+	split_res = ft_split("|||||", '|');
+	print_result("split 4", compare_split(split_res, exp4));
+	free_split(split_res);
 
-	// 🔹 Test 5: solo delimitadores
-	res = ft_split("     ", ' ');
-	print_split(res);
-	free_split(res);
+	printf("\n=== STRMAPI TESTS ===\n");
 
-	// 🔹 Test 6: sin delimitadores
-	res = ft_split("holamundo", ' ');
-	print_split(res);
-	free_split(res);
-
-	// 🔹 Test 7: string vacío
-	res = ft_split("", ' ');
-	print_split(res);
-	free_split(res);
-
-	// 🔹 Test 8: otro delimitador
-	res = ft_split("a,b,c,d", ',');
-	print_split(res);
-	free_split(res);
+	mapi_res = ft_strmapi("abcdef", alternate_case);
+	print_result("strmapi 4", mapi_res && strcmp(mapi_res, "AbCdEf") == 0);
+	free(mapi_res);
 
 	return (0);
 }
