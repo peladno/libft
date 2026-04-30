@@ -137,3 +137,11 @@ gcc your_program.c -L. -lft -o your_program
 - Function naming follows the `ft_` prefix convention.
 - The API is designed to stay close to standard C behavior where applicable.
 - This library is intended to serve as the base utility layer for subsequent projects.
+
+## Resources
+
+https://www.geeksforgeeks.org/c/linked-list-in-c/
+https://www.geeksforgeeks.org/c/c-program-for-inserting-a-node-in-a-linked-list/
+https://www.geeksforgeeks.org/dsa/reverse-a-linked-list/
+https://stackoverflow.com/
+https://www.notion.so
