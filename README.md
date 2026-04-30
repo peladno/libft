@@ -2,127 +2,138 @@ _This project has been created as part of the 42 curriculum by <jperez-u>._
 
 # Libft
 
-## Description
+## Overview
 
-`libft` is a custom C library developed as a foundational project in the 42 curriculum.
-Its main goal is to rebuild a set of standard C library functions and additional utility
-functions from scratch to strengthen understanding of:
+`libft` is a foundational C library that reimplements essential standard C functions and adds
+common utility helpers used across 42 projects.
 
-- Pointers and memory management
-- Strings and low-level data manipulation
-- Defensive programming and edge-case handling
-- API design and reusable code organization
+The objective of this project is to build a reliable low-level toolkit while practicing:
 
-This library is intended to be reused in later 42 projects as a reliable base of tested
-utility functions.
+- manual memory management
+- pointer arithmetic
+- string and byte manipulation
+- robust handling of edge cases
+- modular API design
 
-## Detailed Library Overview
+The result is a reusable static library, `libft.a`, that can be linked in future projects.
 
-The library is split into logical groups of functions.
+## Project Structure
 
-### 1) Character checks and conversion
+The library is organized by functional areas.
 
-- `ft_isalpha`, `ft_isdigit`, `ft_isalnum`, `ft_isascii`, `ft_isprint`
-- `ft_toupper`, `ft_tolower`
+### Character checks and case conversion
 
-These functions validate character classes and perform case conversion.
+- `ft_isalpha`
+- `ft_isdigit`
+- `ft_isalnum`
+- `ft_isascii`
+- `ft_isprint`
+- `ft_toupper`
+- `ft_tolower`
 
-### 2) String handling
+### String handling
 
-- `ft_strlen`, `ft_strlcpy`, `ft_strlcat`
-- `ft_strchr`, `ft_strrchr`, `ft_strncmp`, `ft_strnstr`
-- `ft_strdup`, `ft_substr`, `ft_strjoin`, `ft_strtrim`, `ft_split`
-- `ft_strmapi`, `ft_striteri`
+- `ft_strlen`
+- `ft_strlcpy`
+- `ft_strlcat`
+- `ft_strchr`
+- `ft_strrchr`
+- `ft_strncmp`
+- `ft_strnstr`
+- `ft_strdup`
+- `ft_substr`
+- `ft_strjoin`
+- `ft_strtrim`
+- `ft_split`
+- `ft_strmapi`
+- `ft_striteri`
 
-These functions provide string length calculation, safe copy/concatenation, searching,
-comparison, allocation-based transformations, and splitting utilities.
+### Memory utilities
 
-### 3) Memory operations
+- `ft_memset`
+- `ft_bzero`
+- `ft_memcpy`
+- `ft_memmove`
+- `ft_memchr`
+- `ft_memcmp`
+- `ft_calloc`
 
-- `ft_memset`, `ft_bzero`, `ft_memcpy`, `ft_memmove`
-- `ft_memchr`, `ft_memcmp`, `ft_calloc`
+### Numeric conversion
 
-These cover byte-level memory initialization, copying, searching, comparison,
-and dynamic allocation.
+- `ft_atoi`
+- `ft_itoa`
 
-### 4) Conversion helpers
+### File descriptor output
 
-- `ft_atoi`, `ft_itoa`
+- `ft_putchar_fd`
+- `ft_putstr_fd`
+- `ft_putendl_fd`
+- `ft_putnbr_fd`
 
-These functions convert between strings and integers.
+### Linked list utilities
 
-### 5) File descriptor output helpers
-
-- `ft_putchar_fd`, `ft_putstr_fd`, `ft_putendl_fd`, `ft_putnbr_fd`
-
-These print characters, strings, lines, and numbers to any file descriptor.
-
-### 6) Linked list utility currently included
-
+- `ft_lstnew`
 - `ft_lstadd_front`
+- `ft_lstsize`
+- `ft_lstlast`
+- `ft_lstadd_back`
+- `ft_lstdelone`
+- `ft_lstclear`
+- `ft_lstiter`
+- `ft_lstmap`
 
-This function prepends a node to a linked list. More list functions can be added
-as the project evolves.
-
-## Instructions
+## Build and Commands
 
 ### Requirements
 
-- GCC or Clang
+- `cc` (GCC or Clang)
 - `make`
-- Unix-like environment (Linux/macOS)
+- Unix-like system (Linux/macOS)
 
-### Compilation
-
-Build the static library:
+### Build the library
 
 ```bash
 make
 ```
 
-This generates `libft.a`.
+Output: `libft.a`
 
-### Clean object files
+### Remove object files
 
 ```bash
 make clean
 ```
 
-### Full clean (objects + library)
+### Remove object files and library
 
 ```bash
 make fclean
 ```
 
-### Rebuild from scratch
+### Rebuild everything
 
 ```bash
 make re
 ```
 
-### Use in another project
+## Using `libft` in Another Project
 
-1. Copy `libft.a` and `libft.h` into your project (or link from this repo).
-2. Include the header:
+1. Build the library in this repository.
+2. Copy `libft.a` and `libft.h` to your target project (or reference them directly).
+3. Include the header in your source file:
 
 ```c
 #include "libft.h"
 ```
 
-3. Link the library when compiling:
+4. Link the static library during compilation:
 
 ```bash
 gcc your_program.c -L. -lft -o your_program
 ```
 
-## Resources
+## Notes
 
-### Classic references
-
-- The Open Group Base Specifications (POSIX):
-  https://pubs.opengroup.org/onlinepubs/9699919799/
-- Linux man-pages project:
-  https://man7.org/linux/man-pages/
-- cppreference (C language and standard library):
-  https://en.cppreference.com/w/c
-- The C Programming Language (Kernighan & Ritchie)
+- Function naming follows the `ft_` prefix convention.
+- The API is designed to stay close to standard C behavior where applicable.
+- This library is intended to serve as the base utility layer for subsequent projects.
