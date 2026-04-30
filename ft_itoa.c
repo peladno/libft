@@ -6,11 +6,10 @@
 /*   By: jperez-u <jperez-u@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 22:46:26 by jperez-u          #+#    #+#             */
-/*   Updated: 2026/04/28 22:49:12 by jperez-u         ###   ########.fr       */
+/*   Updated: 2026/04/30 20:14:09 by jperez-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// TODO
 #include "libft.h"
 
 static size_t	count_len(long n)
@@ -25,7 +24,7 @@ static size_t	count_len(long n)
 	}
 	while (n > 0)
 	{
-		n = n / 10;
+		n /= 10;
 		len++;
 	}
 	return (len);
@@ -35,9 +34,9 @@ char	*ft_itoa(int n)
 {
 	char	*str;
 	long	nbr;
-	int		len;
+	size_t	len;
 
-	nbr = n;
+	nbr = (long)n;
 	len = count_len(nbr);
 	str = malloc(sizeof(char) * (len + 1));
 	if (!str)

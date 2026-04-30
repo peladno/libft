@@ -6,11 +6,10 @@
 /*   By: jperez-u <jperez-u@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/29 12:03:39 by jperez-u          #+#    #+#             */
-/*   Updated: 2026/04/29 12:29:22 by jperez-u         ###   ########.fr       */
+/*   Updated: 2026/04/30 20:13:10 by jperez-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// TODO
 #include "libft.h"
 
 void	ft_putnbr_fd(int n, int fd)
@@ -19,15 +18,13 @@ void	ft_putnbr_fd(int n, int fd)
 	char	*base;
 
 	base = "0123456789";
-	nbr = n;
-	if (n < 0)
+	nbr = (long)n;
+	if (nbr < 0)
 	{
-		nbr = -nbr;
 		ft_putchar_fd('-', fd);
+		nbr = -nbr;
 	}
 	if (nbr > 9)
-	{
 		ft_putnbr_fd(nbr / 10, fd);
-	}
 	ft_putchar_fd(base[nbr % 10], fd);
 }
