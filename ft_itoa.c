@@ -13,9 +13,9 @@
 // TODO
 #include "libft.h"
 
-int	count_len(long n)
+static size_t	count_len(long n)
 {
-	int	len;
+	size_t	len;
 
 	len = 0;
 	if (n <= 0)
