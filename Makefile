@@ -1,7 +1,9 @@
+#TODO checkea igual todo
 NAME = libft.a
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
+AR = ar rcs
 
 SRCS = \
 	ft_isalpha.c \
@@ -35,7 +37,7 @@ SRCS = \
 	ft_strmapi.c \
 	ft_striteri.c \
 	ft_putchar_fd.c \
-	ft_putstr_fd.c\
+	ft_putstr_fd.c \
 	ft_putendl_fd.c \
 	ft_putnbr_fd.c \
 	ft_lstnew.c \
@@ -46,7 +48,7 @@ SRCS = \
 	ft_lstdelone.c \
 	ft_lstclear.c \
 	ft_lstiter.c \
-	ft_lstmap.c \
+	ft_lstmap.c
 
 OBJS = $(SRCS:.c=.o)
 
@@ -55,7 +57,7 @@ OBJS = $(SRCS:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	ar rcs $(NAME) $(OBJS)
+	${AR} $(NAME) $(OBJS)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
