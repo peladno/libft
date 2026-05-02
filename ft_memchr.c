@@ -6,7 +6,7 @@
 /*   By: jperez-u <jperez-u@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/23 20:42:07 by jperez-u          #+#    #+#             */
-/*   Updated: 2026/04/25 00:04:06 by jperez-u         ###   ########.fr       */
+/*   Updated: 2026/05/02 20:32:54 by jperez-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,23 +25,13 @@ void	*ft_memchr(const void *s, int c, size_t n)
 			return ((void *)&ptr[i]);
 		i++;
 	}
-	return (0);
+	return (NULL);
 }
-
-// #include <string.h>
-
-// void	*ft_memchr(const void *s, int c, size_t n);
 
 // int	main(void)
 // {
-// 	char str[] = "hola mundo";
-// 	char data[] = {'a', 'b', '\0', 'c', 'd'};
+// 	char str[] = "Hola mundo";
 
-// 	char *res1;
-// 	char *res2;
-
-// 	res1 = ft_memchr(str, 'c', 10);
-// 	res2 = memchr(str, 'c', 10);
-
-// 	return (0);
+// 	printf("%s\n", (char *)ft_memchr(str, 'm', 10));
+// 	printf("%s\n", (char *)memchr(str, 'm', 10));
 // }
