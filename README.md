@@ -1,4 +1,4 @@
-_This project has been created as part of the 42 curriculum by <jperez-u>._
+_This project has been created as part of the 42 curriculum by jperez-u._
 
 # Libft
 
@@ -140,8 +140,8 @@ gcc your_program.c -L. -lft -o your_program
 
 ## Resources
 
-https://www.geeksforgeeks.org/c/linked-list-in-c/
-https://www.geeksforgeeks.org/c/c-program-for-inserting-a-node-in-a-linked-list/
-https://www.geeksforgeeks.org/dsa/reverse-a-linked-list/
-https://stackoverflow.com/
-https://www.notion.so
+- https://www.geeksforgeeks.org/c/linked-list-in-c/
+- https://www.geeksforgeeks.org/c/c-program-for-inserting-a-node-in-a-linked-list/
+- https://www.geeksforgeeks.org/dsa/reverse-a-linked-list/
+- https://stackoverflow.com/
+- https://www.notion.so
