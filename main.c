@@ -6,7 +6,7 @@
 /*   By: jperez-u <jperez-u@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/06 15:17:23 by jperez-u          #+#    #+#             */
-/*   Updated: 2026/05/06 15:18:13 by jperez-u         ###   ########.fr       */
+/*   Updated: 2026/05/08 20:33:30 by jperez-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -201,6 +201,39 @@ int	main(void)
 	int bytes;
 
 	fd = open("test.txt", O_WRONLY | O_CREAT | O_TRUNC, 0644);
+	ft_putchar_fd('A', fd);
+	close(fd);
+
+	fd = open("test.txt", O_RDONLY);
+	bytes = read(fd, buffer, 1);
+	buffer[bytes] = '\0';
+	close(fd);
+
+	print_result("putchar_fd", bytes == 1 && buffer[0] == 'A');
+
+	fd = open("test.txt", O_WRONLY | O_CREAT | O_TRUNC, 0644);
+	ft_putstr_fd("hello", fd);
+	close(fd);
+
+	fd = open("test.txt", O_RDONLY);
+	bytes = read(fd, buffer, 5);
+	buffer[bytes] = '\0';
+	close(fd);
+
+	print_result("putstr_fd", strcmp(buffer, "hello") == 0);
+
+	fd = open("test.txt", O_WRONLY | O_CREAT | O_TRUNC, 0644);
+	ft_putendl_fd("hello", fd);
+	close(fd);
+
+	fd = open("test.txt", O_RDONLY);
+	bytes = read(fd, buffer, 6);
+	buffer[bytes] = '\0';
+	close(fd);
+
+	print_result("putendl_fd", strcmp(buffer, "hello\n") == 0);
+
+	fd = open("test.txt", O_WRONLY | O_CREAT | O_TRUNC, 0644);
 	ft_putnbr_fd(-2147483648, fd);
 	close(fd);
 
@@ -211,18 +244,65 @@ int	main(void)
 
 	print_result("putnbr INT_MIN", strcmp(buffer, "-2147483648") == 0);
 
+	char str_iter[] = "hello";
+
+	ft_striteri(str_iter, to_upper_iter);
+	print_result("striteri", strcmp(str_iter, "HELLO") == 0);
+
 	printf("\n=== LIST TESTS ===\n");
-	t_list *lst = NULL;
-	t_list *node1 = ft_lstnew(ft_strdup("one"));
-	t_list *node2 = ft_lstnew(ft_strdup("two"));
 
-	ft_lstadd_back(&lst, node1);
+	t_list *lst;
+	t_list *node1;
+	t_list *node2;
+	t_list *node3;
+	t_list *last;
+	t_list *mapped;
+	char *str1;
+	char *str2;
+	char *str3;
+
+	lst = NULL;
+
+	str1 = strdup("one");
+	str2 = strdup("two");
+	str3 = strdup("three");
+
+	node1 = ft_lstnew(str1);
+	node2 = ft_lstnew(str2);
+	node3 = ft_lstnew(str3);
+
+	print_result("lstnew", node1 && strcmp(node1->content, "one") == 0);
+
+	ft_lstadd_front(&lst, node1);
+	print_result("add_front", lst == node1);
 	ft_lstadd_back(&lst, node2);
+	ft_lstadd_back(&lst, node3);
 
-	print_result("lstsize", ft_lstsize(lst) == 2);
+	last = ft_lstlast(lst);
+	print_result("add_back", last && strcmp(last->content, "three") == 0);
 
+	print_result("lstsize", ft_lstsize(lst) == 3);
+
+	ft_lstiter(lst, upper_content);
+	print_result("lstiter", strcmp(lst->content, "ONE") == 0
+		&& strcmp(lst->next->content, "TWO") == 0
+		&& strcmp(lst->next->next->content, "THREE") == 0);
+
+	mapped = ft_lstmap(lst, dup_content, del_content);
+
+	print_result("lstmap", mapped && strcmp(mapped->content, "ONE") == 0
+		&& strcmp(mapped->next->content, "TWO") == 0);
+
+	t_list *tmp_node;
+	char *tmp_str;
+
+	tmp_str = strdup("delete me");
+	tmp_node = ft_lstnew(tmp_str);
+	ft_lstdelone(tmp_node, del_content);
+	print_result("lstdelone", 1);
 	ft_lstclear(&lst, del_content);
 	print_result("lstclear", lst == NULL);
 
+	ft_lstclear(&mapped, del_content);
 	return (0);
 }
