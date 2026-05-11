@@ -140,6 +140,8 @@ gcc your_program.c -L. -lft -o your_program
 
 ## Resources
 
+- I used IA to make the readme file and used to test fuctions.
+
 - https://www.geeksforgeeks.org/c/linked-list-in-c/
 - https://www.geeksforgeeks.org/c/c-program-for-inserting-a-node-in-a-linked-list/
 - https://www.geeksforgeeks.org/dsa/reverse-a-linked-list/
