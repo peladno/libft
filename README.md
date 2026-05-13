@@ -138,9 +138,12 @@ gcc your_program.c -L. -lft -o your_program
 - The API is designed to stay close to standard C behavior where applicable.
 - This library is intended to serve as the base utility layer for subsequent projects.
 
+## AI
+
+- I used AI to make the readme file and I used it to test functions.
+
 ## Resources
 
-- I used IA to make the readme file and used to test fuctions.
 
 - https://www.geeksforgeeks.org/c/linked-list-in-c/
 - https://www.geeksforgeeks.org/c/c-program-for-inserting-a-node-in-a-linked-list/
