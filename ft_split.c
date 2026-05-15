@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	str_length(const char *s)
+static int	str_length(const char *s)
 {
 	int	len;
 
