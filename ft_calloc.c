@@ -12,15 +12,39 @@
 
 #include "libft.h"
 
+// void	*ft_calloc(size_t count, size_t size)
+// {
+// 	void	*arr;
+
+// 	if (size != 0 && count > SIZE_MAX / size)
+// 		return (NULL);
+// 	arr = malloc(count * size);
+// 	if (!arr)
+// 		return (NULL);
+// 	ft_bzero(arr, count * size);
+// 	return (arr);
+// }
+
 void	*ft_calloc(size_t count, size_t size)
 {
 	void	*arr;
 
 	if (size != 0 && count > SIZE_MAX / size)
 		return (NULL);
+//TODO check is that ok
+	if (count == 0 || size == 0)
+	{
+		arr = malloc(1);
+		if (!arr)
+			return (NULL);
+		return (arr);
+	}
+
 	arr = malloc(count * size);
 	if (!arr)
 		return (NULL);
+
 	ft_bzero(arr, count * size);
+
 	return (arr);
 }
