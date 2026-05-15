@@ -6,7 +6,7 @@
 /*   By: jperez-u <jperez-u@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 20:33:37 by jperez-u          #+#    #+#             */
-/*   Updated: 2026/04/28 22:30:57 by jperez-u         ###   ########.fr       */
+/*   Updated: 2026/05/15 20:10:37 by jperez-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,11 +50,9 @@ static char	*copy_word(const char *str, int start, int end)
 	char	*word;
 	int		i;
 
-	word = (char *)malloc(sizeof(char) * ((end - start) + 1))
-	//TODO test and check
-	if(!word){
-		return NULL;
-	}
+	word = (char *)malloc(sizeof(char) * ((end - start) + 1));
+	if (!word)
+		return (NULL);
 	i = 0;
 	while (start < end)
 		word[i++] = str[start++];
