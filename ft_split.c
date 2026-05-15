@@ -50,7 +50,11 @@ static char	*copy_word(const char *str, int start, int end)
 	char	*word;
 	int		i;
 
-	word = (char *)malloc(sizeof(char) * ((end - start) + 1));
+	word = (char *)malloc(sizeof(char) * ((end - start) + 1))
+	//TODO test and check
+	if(!word){
+		return NULL;
+	}
 	i = 0;
 	while (start < end)
 		word[i++] = str[start++];
