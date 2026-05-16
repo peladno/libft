@@ -6,7 +6,7 @@
 /*   By: jperez-u <jperez-u@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/24 14:13:00 by jperez-u          #+#    #+#             */
-/*   Updated: 2026/05/10 16:58:08 by jperez-u         ###   ########.fr       */
+/*   Updated: 2026/05/16 11:26:08 by jperez-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ void	*ft_memmove(void *dest, const void *src, size_t len)
 	unsigned char		*d;
 	const unsigned char	*s;
 
-	d = (unsigned char *)dest;
-	s = (const unsigned char *)src;
 	if (!dest && !src)
 		return (NULL);
+	d = (unsigned char *)dest;
+	s = (const unsigned char *)src;
 	if (d < s)
 		while (len--)
 			*d++ = *s++;

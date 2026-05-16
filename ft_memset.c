@@ -6,7 +6,7 @@
 /*   By: jperez-u <jperez-u@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/24 22:51:57 by jperez-u          #+#    #+#             */
-/*   Updated: 2026/04/24 23:23:35 by jperez-u         ###   ########.fr       */
+/*   Updated: 2026/05/16 11:09:27 by jperez-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	*ft_memset(void *b, int c, size_t len)
 	size_t			i;
 	unsigned char	*ptr;
 
-	ptr = b;
+	ptr = (unsigned char *)b;
 	i = 0;
 	while (i < len)
 	{
